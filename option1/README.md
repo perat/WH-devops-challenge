@@ -81,7 +81,7 @@ curl \
 ```
 
 
-# Horizontal Pod Autoscaler
+## Horizontal Pod Autoscaler
 references:
 - [horizontal-pod-autoscale](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)
 - [assign-memory-resource](https://kubernetes.io/docs/tasks/configure-pod-container/assign-memory-resource/)
@@ -95,7 +95,7 @@ kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/down
 kubectl top pods
 ```
 
-## Test auto-scaling
+### Test auto-scaling
 Check initial count of pods
 ```bash
 kubectl get pods --selector app.kubernetes.io/name=sample-app
