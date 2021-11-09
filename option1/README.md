@@ -1,10 +1,10 @@
 # Option 1
 
 Simple python flask application serves API endpoint with API-KEY validation.
-Dockerfile uses non-root user to run application.
-Helm chart describes k8s deployment with 2 initial pod replicas and auto-scaling to 10 pods based on CPU/Memory load.
-Helm chart create service account inside k8s target namespace which is used to run pods.
-API Key is stored in k8s secret created as pre-requisite for deployment and mapped inside pods as environment variable.
+- Dockerfile uses non-root user to run application.
+- Helm chart describes k8s deployment with 2 initial pod replicas and auto-scaling to 10 pods based on CPU/Memory load.
+- Helm chart create service account inside k8s target namespace which is used to run pods.
+- API Key is stored in k8s secret created as pre-requisite for deployment and mapped inside pods as environment variable.
 
 Minikube local cluster was used to prepare those notes, so some steps (e.g. docker image publish to registry) are skipped.
 [How to setup minikube on Mac](https://itnext.io/goodbye-docker-desktop-hello-minikube-3649f2a1c469)
