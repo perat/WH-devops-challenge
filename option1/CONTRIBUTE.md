@@ -67,3 +67,10 @@ Flask server output:
 ```
 127.0.0.1 - - [09/Nov/2021 12:21:56] "POST /json/ HTTP/1.1" 200 -
 ```
+
+
+# Formatting
+Auto-format with help of black module
+```bash
+black option1/src/python/flask-api-key-package/flask_api_key
+```

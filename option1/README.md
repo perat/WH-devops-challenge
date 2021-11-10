@@ -74,10 +74,14 @@ kubectl exec <pod_name> -- bash -c 'env|grep API'
 
 Validate POST API 
 ```bash
+# Get API_KEY
+API_KEY=$( kubectl get secrets option1-app-secrets -o jsonpath='{.data.api-key}' | base64 -d )
+
+# Send POST request
 curl \
 -H "Content-Type: application/json" \
 -H "x-api-key: $API_KEY" \
--X POST -d '{"username":"xyz","password":"xyz"}' http://localhost:$NODE_PORT/json/
+-X POST -d '{"username":"xyz","password":"xyz"}' http://${NODE_IP}:${NODE_PORT}/json/
 ```
 
 
@@ -102,7 +106,7 @@ kubectl get pods --selector app.kubernetes.io/name=sample-app
 ```
 
 It is expected to be only 2 pods according to values set for helm chart
-```
+```bash
 # initial number of pods for deployment
 replicaCount: 2 
 
