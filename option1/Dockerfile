@@ -16,7 +16,7 @@ WORKDIR /home/app_user
 COPY src/python/flask-api-key-package/requirements.txt ./
 RUN pip install -r requirements.txt
 
-COPY src/python/flask-api-key-package/flask-api-key/* ./
+COPY src/python/flask-api-key-package/flask_api_key/* ./
 ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
 ENV FLASK_RUN_PORT=8080
